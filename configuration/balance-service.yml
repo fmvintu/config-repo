@@ -34,4 +34,4 @@ management:
       exposure:
         include: "*"
 
-app.api-desc: Balance API
+app.api-desc: Balance API - Auto refreshed

@@ -38,3 +38,4 @@ management:
     web:
       exposure:
         include: "*"
+app.api-desc: Account API
