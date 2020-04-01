@@ -1,0 +1,67 @@
+server:
+  port: ${PORT:2229}
+
+# Used by actuator and togglz
+management.server.port: 2228
+
+spring:
+ # cloud:
+ #   loadbalancer:
+ #     ribbon:
+ #       enabled: false
+  data.mongodb:
+    #host: localhost
+    #port: 27017
+    uri: mongodb://localhost:27017/feature
+    #database: feature
+
+logging:
+  pattern:
+    console: "%clr(%d{yyyy-MM-dd HH:mm:ss}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr([${springAppName:-},%X{X-B3-TraceId:-},%X{X-B3-SpanId:-},%X{X-Span-Export:-}]){yellow} %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"
+  level:
+    #root: DEBUG
+    org.springframework: WARN
+    #org.hibernate: WARN
+
+togglz:
+  feature-enums: br.com.microservices.featuretoggle.BookstoreFeatures
+  features:
+      BOOK_WISHLIST.enabled: true
+
+  console:
+      enabled: true
+      path: /togglz-console
+      secured: false
+      use-management-port: true
+
+  endpoint:
+      id: togglz
+      enabled: true
+      sensitive: true
+
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: ${DISCOVERY_URL:http://localhost:8761}/eureka/
+#    registryFetchIntervalSeconds: 5
+#  instance:
+#    preferIpAddress: true
+#    leaseRenewalIntervalInSeconds: 2
+#    leaseExpirationDurationInSeconds: 4
+
+#spring:
+#  cloud:
+#    loadbalancer:
+#      ribbon:
+#        enabled: false
+
+#ribbon:
+#  eureka:
+#    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
