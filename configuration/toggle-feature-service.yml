@@ -24,7 +24,7 @@ logging:
     #org.hibernate: WARN
 
 togglz:
-  feature-enums: br.com.microservices.featuretoggle.BookstoreFeatures
+  feature-enums: br.com.microservices.featuretoggle.common.AllFeatures
   features:
       BOOK_WISHLIST.enabled: true
 
