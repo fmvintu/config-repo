@@ -14,6 +14,7 @@ spring:
     #port: 27017
     uri: mongodb://localhost:27017/feature
     #database: feature
+  application.index: ${random.uuid}
 
 logging:
   pattern:
