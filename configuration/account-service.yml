@@ -1,6 +1,9 @@
 server:  
   port: ${PORT:2222}
 
+# Used by actuator and togglz
+management.server.port: 2221
+  
 spring:  
   cloud:
     loadbalancer:
@@ -38,4 +41,17 @@ management:
     web:
       exposure:
         include: "*"
+        
 app.api-desc: Account API
+
+togglz:
+  console:
+      enabled: true
+      path: /togglz-console
+      secured: false
+      use-management-port: true
+
+  endpoint:
+      id: togglz
+      enabled: true
+      sensitive: true
