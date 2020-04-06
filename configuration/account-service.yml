@@ -16,6 +16,12 @@ spring:
       org.springframework: WARN
       org.hibernate: WARN
 
+    data.mongodb:
+      #host: localhost
+#     #port: 27017
+      uri: mongodb://localhost:27017/feature
+                 #            #database: feature
+                 #
 eureka:  
   client:
     serviceUrl:
